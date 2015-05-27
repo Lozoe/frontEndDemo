@@ -1,0 +1,104 @@
+*,body {
+	font-style: Arial serif "微软雅黑";
+	font-size:18px;
+	margin:0;
+	padding:0;
+}
+label {
+	vertical-align: middle;
+}
+p {
+	font-size:12px;
+	font-style:"Microsoft YaHei";
+	font-weight:bold;
+	margin-left:310px;
+}
+input:focus {
+	outline: none;
+}
+form {
+	width:840px;
+	height:500px;
+	margin:100px auto;
+}
+form div {
+	overflow: hidden;
+	clear:both;
+	margin:5px;
+}
+form div label {
+	float:left;
+	/*clear:both;*/
+}
+form div label .text {
+	height:30px;
+	width:200px;
+	padding:0 2px;
+	border:1px solid #ccc;
+}
+form div label b {
+	font-style:normal;
+	font-size:12px;
+	visibility:hidden;
+	color:#ccc;
+}
+form div em {
+	display:inline-block;
+	font-size:12px;
+	text-align:center;
+	color:#fff;
+	vertical-align: middle;
+	font-style:normal;
+	width:66px;
+	height:20px;
+	line-height: 20px;
+	background-color: #F5C089;
+	margin-left:-10px;
+
+}
+form div .active {
+	background-color:#F3610E;
+}
+form div span {
+	display:inline-block;
+	width:90px;
+	text-align:right;
+}
+form div .signal {
+	margin-left: 100px;
+	width: 200px;
+}
+form .register {
+	margin-left: 125px;
+	margin-top: 20px;
+}
+form .register .btn {
+	background-color:#F3610E;
+	border-radius:6px;
+	padding:5px;
+	outline:none;
+	color:#fff;
+}
+form div .msg {
+	line-height: 25px;
+	color: #999;
+	vertical-align: middle;
+	height: 32px;
+	display: none;
+}
+form div .msg i{
+	display:inline-block;
+	vertical-align: middle;
+	width:16px;
+	height:16px;
+	background:url(../images/validation.png) no-repeat;
+	/*background:url(../images/self.png) no-repeat;*/
+}
+form div .msg .pass {
+	/*background-position:0 0;*/
+	background-position:-16px 0;	
+}
+form div .msg .ati {
+	background-position:0 0;
+	margin-right:5px;
+}
