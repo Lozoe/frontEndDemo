@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>注册登录</title>
+	<style type="text/css">
+		body,*{
+			font-size:18px;
+		}
+		div{
+			height:270px;
+			width:230px;
+			background-color: #fff;
+		}
+		form{
+			background-color: #C3E3EA;
+			margin:3px;
+			text-align: center;
+		}
+		input{
+			height:40px;
+			line-height: 30px;
+			width:200px;
+			margin:5px;
+			border-radius:10px;
+			outline:none;
+		}
+		#check{
+			height:15px;
+			width:15px;
+			margin-left:3px;
+			margin-top:3px;
+			font-size:10px;
+
+		}
+		a{
+			text-decoration: none;
+			font-size:10px;
+		}
+		p{
+			display:inline;
+			font-size:10px;
+		}
+		.login{
+			background:url(雪碧图.jpg);
+			background-position:0 0;
+			height:40px;
+			width:190px;
+			margin-bottom:5px;
+			margin-top:8px;
+		}
+		.register{
+			background:url(雪碧图.jpg);
+			background-position:0 -40px;
+			height:40px;
+			width:190px;
+			margin-bottom:5px;
+		}
+		hr{
+			color:#CDC4C4;
+			width:180px;
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<form action="#">
+			<input type="text" name="user" id="user" placeholder="      邮箱/手机号/用户名"/><br/>
+			<input type="password" name="password" id="password" placeholder="      请输入密码"/><br/>
+			<input type="checkbox" name="check" id="check">
+			<label>下次自动登录</label>
+			<a href="#">忘记密码？</a><br/>
+			<button class="login"></button>
+			<hr/>
+			<button class="register"></button>
+		</form>
+	</div>
+</body>
+</html>
