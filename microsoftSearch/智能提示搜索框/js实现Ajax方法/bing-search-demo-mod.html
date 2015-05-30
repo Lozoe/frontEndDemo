@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>bing search</title>	
+	<style>
+		body{
+			background-color:#333;
+		}
+		.bg-div{
+			background-image:url("images/river.jpg");
+			width:1228px;
+			height:690px;
+			margin:0 auto;
+			position:relative;
+		}
+		.logo{
+			background-image:url("images/logo.png");
+			height:53px;
+			width:107px;
+			float:left;
+			margin:-4px 18px 0px 0px;
+		}
+		form{
+			float:left;
+			background-color: #fff;
+			padding:5px;
+		}
+		.search-text{
+			border:0;
+			float:left;
+			height:25px;
+			line-height: 25px;/* 设置里面的文本垂直居中 */
+			outline:none;
+			width:350px;
+		}
+		.search-button{
+			border:0;
+			background-image: url(images/search-button.png);
+			height: 29px;
+			width:29px;
+			float:left;
+			outline:none;
+		}
+		.search-box{
+			position: absolute;
+			top:200px;
+			left:300px;
+		}
+		.suggest{
+			width:388px;
+			background-color: #fff;
+			border:1px solid #999;
+		}
+		.suggest ul{
+			list-style:none;
+			margin:0;
+			padding:0;
+		}
+		.suggest ul li{
+			padding:3px;
+			font-size:14px;
+			line-height:25px;
+			cursor:pointer;
+		}
+		.suggest ul li:hover{
+			text-decoration: underline;
+			background-color:#e5e5e5; 
+		}
+	</style>
+</head>
+<body>
+	<div class="bg-div">
+		<div class="search-box">
+			<div class="logo">			
+			</div>
+			<form class="search-form" action="https://cn.bing.com/search" target="_blank" id="search-form">
+				<input type="text" class="search-text" id="search_input" autocomplete="off"/>
+				<input type="submit" class="search-button" value=""/>
+			</form>
+		</div>		
+	</div>
+	<div class="suggest" id="search-suggest" style="display:none;">
+		<ul id="search-result">
+			<li>搜索结果1</li>
+			<li>搜索结果2</li>
+		</ul>		
+	</div>
+	<script>
+		var getDOM=function(id)
+		{
+			return document.getElementById(id);
+
+		};
+		var addEvent=function(id,event,fn)
+		{
+			var el=getDOM(id)||document;
+			//addEventListener适用于非IE浏览器
+			if(el.addEventListener)
+			{
+				el.addEventListener(event,fn,false);
+			}
+			//attachEvent适用于非IE浏览器
+			else if(el.attachEvent)
+			{
+				el.attachEvent('on'+event,fn);
+			}
+		};
+		var getElementLeft=function(element)
+		{
+			var actualLeft=element.offsetLeft;
+			var current=element.offsetParent;
+			while(current!==null)
+			{
+				actualLeft+=current.offsetLeft;
+				current=current.offsetParent;
+			}
+			return actualLeft;
+		};
+		var getElementTop=function(element)
+		{
+			var actualTop=element.offsetTop;
+			var current=element.offsetParent;
+			while(current!==null)
+			{
+				actualTop+=current.offsetTop;
+				current=current.offsetParent;
+			}
+			return actualTop;
+		};
+		var ajaxGet=function(url,callback)
+		{
+			var _xhr=null;
+			if(window.XMLHttpRequest)
+			{
+				_xhr=new window.XMLHttpRequest();
+			}
+			else if(window.ActiveXObject)
+			{
+				_xhr=new ActiveXObject("Msxml2.XMLHTTP");
+			}
+			//当服务端的状态发生变换的时候,可以在浏览器里面呈现出一定效果,XHR的onreadystatechange属性
+			_xhr.onreadystatechage=function()
+			{
+				//_xhr.readyState==4&&_xhr.status==200表示服务器正确响应并返回信息，responseText存放着服务器返回的结果当中,responseText这个属性本身可能是一个字符串，通过JSON.parse()讲一个字符串转换成一个js可以识别的对象
+				if(_xhr.readyState==4&&_xhr.status==200)
+					callback(JSON.parse(_xhr.responseText));
+			};
+			_xhr.open('get',url,false);
+			_xhr.send(null);
+		};
+		//为js动态生成的网页元素添加入事件时，通常需要使用事件代理来实现
+		var delegateEvent=function(target,event,fn)
+		{
+			addEvent(document,event,function(e){
+				if(e.target.nodeName==target.toUpperCase())
+				{
+					fn.call(e.target);
+				}
+			});
+		};
+		addEvent('search_input','keyup',function(){
+			var searchText=getDOM('search_input').value;
+			ajaxGet('http://api.bing.com/qsonhs.aspx?q='+searchText,function(d){
+					var d=d.AS.Results[0].Suggests;
+					var html="";
+					for(var i=0;i<d.length;i++)
+					{
+						html+='<li>'+d[i].Txt+'</li>';
+					}
+					var _dom=getDOM('search-suggest');
+					getDOM('search-result').innerHTML=html;
+					_dom.style.top=getElementTop(getDOM('search-form'))+38+'px';			
+					_dom.style.left=getElementLeft(getDOM('search-form'))+'px';
+					_dom.style.position='absolute';
+					_dom.style.display='block';
+			});			
+		});
+		delegateEvent('li',click,function(){
+			var keyword=this.innerHTML;
+			location.href='http://cn.bing.com/search?q='+keyword;
+		});		
+	</script>
+</body>
+</html>

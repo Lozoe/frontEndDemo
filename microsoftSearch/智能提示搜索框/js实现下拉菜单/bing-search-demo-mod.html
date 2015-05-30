@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>bing search</title>	
+	<style>
+		body{
+			background-color:#333;
+		}
+		.bg-div{
+			background-image:url("images/river.jpg");
+			width:1228px;
+			height:690px;
+			margin:0 auto;
+			position:relative;
+		}
+		.logo{
+			background-image:url("images/logo.png");
+			height:53px;
+			width:107px;
+			float:left;
+			margin:-4px 18px 0px 0px;
+		}
+		form{
+			float:left;
+			background-color: #fff;
+			padding:5px;
+		}
+		.search-text{
+			border:0;
+			float:left;
+			height:25px;
+			line-height: 25px;/* 设置里面的文本垂直居中 */
+			outline:none;
+			width:350px;
+		}
+		.search-button{
+			border:0;
+			background-image: url(images/search-button.png);
+			height: 29px;
+			width:29px;
+			float:left;
+			outline:none;
+		}
+		.search-box{
+			position: absolute;
+			top:200px;
+			left:300px;
+		}
+		.suggest{
+			width:388px;
+			background-color: #fff;
+			border:1px solid #999;
+		}
+		.suggest ul{
+			list-style:none;
+			margin:0;
+			padding:0;
+		}
+		.suggest ul li{
+			padding:3px;
+			font-size:14px;
+			line-height:25px;
+			cursor:pointer;
+		}
+		.suggest ul li:hover{
+			text-decoration: underline;
+			background-color:#e5e5e5; 
+		}
+	</style>
+</head>
+<body>
+	<div class="bg-div">
+		<div class="search-box">
+			<div class="logo">			
+			</div>
+			<form class="search-form" action="https://cn.bing.com/search" target="_blank" id="search-form">
+				<input type="text" class="search-text" id="search_input" autocomplete="off"/>
+				<input type="submit" class="search-button" value=""/>
+			</form>
+		</div>		
+	</div>
+	<div class="suggest" id="search-suggest" style="display:none;">
+		<ul id="search-result">
+			<li>搜索结果1</li>
+			<li>搜索结果2</li>
+		</ul>		
+	</div>
+	<script>
+		var getDOM=function(id)
+		{
+			return document.getElementById(id);
+
+		};
+		var addEvent=function(id,event,fn)
+		{
+			var el=getDOM(id)||document;
+			//addEventListener适用于非IE浏览器
+			if(el.addEventListener)
+			{
+				el.addEventListener(event,fn,false);
+			}
+			//attachEvent适用于非IE浏览器
+			else if(el.attachEvent)
+			{
+				el.attachEvent('on'+event,fn);
+			}
+		};
+		var getElementLeft=function(element)
+		{
+			var actualLeft=element.offsetLeft;
+			var current=element.offsetParent;
+			while(current!==null)
+			{
+				actualLeft+=current.offsetLeft;
+				current=current.offsetParent;
+			}
+			return actualLeft;
+		};
+		var getElementTop=function(element)
+		{
+			var actualTop=element.offsetTop;
+			var current=element.offsetParent;
+			while(current!==null)
+			{
+				actualTop+=current.offsetTop;
+				current=current.offsetParent;
+			}
+			return actualTop;
+		};
+		addEvent('search_input','keyup',function(){
+			getDOM('search-suggest').style.top=getElementTop(getDOM('search-form'))+38+'px';			
+			getDOM('search-suggest').style.left=getElementLeft(getDOM('search-form'))+'px';
+			getDOM('search-suggest').style.position='absolute';
+			getDOM('search-suggest').style.display='block';
+		});
+	</script>
+</body>
+</html>
