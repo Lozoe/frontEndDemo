@@ -1,0 +1,329 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-size: 12px;
+}
+
+body {
+    background-color: #F5F5F5;
+}
+
+.top {
+    width: 100%;
+    height: 27px;
+    background: url(../images/top_bg.jpg) repeat-x;
+}
+
+.topContent {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+.topContent li {
+    list-style-image: url(../images/li_bg.gif);
+    float: right;
+    width: 70px;
+    line-height: 27px;
+}
+
+.topContent a:link,
+.topContent a:visited {
+    color: #8E8E8E;
+    text-decoration: none;
+}
+
+.topContent a:hover,
+.topContent a:active {
+    color: #900;
+    text-decoration: none;
+}
+
+.wrap {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+.logo {
+    height: 80px;
+    background-color: #fff;
+}
+
+.logoLeft {
+    width: 200px;
+    float: left;
+}
+
+.logoLeft img {
+    vertical-align: bottom;
+}
+
+.logoRight {
+    width: 300px;
+    float: right;
+    height: 28px;
+    margin-top: 30px;
+    color: #8E8E8E;
+    line-height: 28px;
+}
+
+.logoRight img {
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+.tel {
+    font-family: "微软雅黑";
+    font-size: 16px;
+    color: #C00;
+}
+
+.nav {
+    height: 40px;
+}
+
+.navLeft,
+.navMid,
+.navRight {
+    float: left;
+    height: 40px;
+}
+
+.navLeft {
+    display: inline;
+    width: 10px;
+    background: url(../images/nav_left.jpg) no-repeat;
+}
+
+.navMid {
+    width: 980px;
+    background: url(../images/nav_bg.jpg) repeat-x;
+}
+
+.navRight {
+    display: inline;
+    width: 10px;
+    background: url(../images/nav_right.jpg) no-repeat;
+}
+
+.navMidLeft,
+.navMidRight {
+    float: left;
+}
+
+.navMidLeft {
+    width: 680px;
+}
+
+.navMidRight {
+    width: 300px;
+}
+
+.navMidLeft li {
+    float: left;
+    list-style: none;
+    width: 100px;
+    text-align: center;
+    line-height: 40px;
+}
+
+.navMidLeft a:link,
+.navMidLeft a:visited {
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+    font-family: "微软雅黑";
+}
+
+.navMidLeft a:hover,
+.navMidLeft a:active {
+    text-decoration: none;
+    color: yellow;
+    font-size: 16px;
+    font-family: "微软雅黑";
+}
+
+.searchText {
+    height: 25px;
+    width: 190px;
+    margin-top: 5px;
+    background: url(../images/search.jpg) no-repeat right center;
+    /*background-image: url(../images/search.jpg);
+	background-repeat: no-repeat;
+	background-position:right center;*/
+    
+    background-color: #fff;
+    padding-right: 25px;
+    border: 1px solid #fff;
+}
+
+.ad {
+    height: 310px;
+    overflow: hidden;
+}
+
+.main {
+    height: 250px;
+    background-color: #FFF;
+    margin-top: 5px;
+}
+
+.news {
+    width: 340px;
+    border: 1px solid #E8E8E8;
+}
+
+.course {
+    width: 410px;
+    border: 1px solid #E8E8E8;
+    margin: 0px 7px;
+}
+
+.sidebar {
+    width: 230px;
+}
+
+.news,
+.course,
+.sidebar {
+    height: 250px;
+    float: left;
+}
+
+.title {
+    height: 35px;
+    border-bottom: 2px solid #E8E8E8;
+}
+
+.titleLeft {
+    width: 70%;
+    font-family: "微软雅黑";
+    font-size: 14px;
+    font-weight: bold;
+    color: #786F66;
+    float: left;
+    line-height: 35px;
+    padding-left: 20px;
+}
+
+.titleRight {
+	width:20%;
+	float:right;
+	line-height: 35px;
+	text-align:right;
+	padding-right:10px;
+}
+
+.titleRight a {
+	text-decoration: none;
+	color:#999999;
+}
+.picNews {
+	height:80px;
+	margin-top:10px;
+	line-height: 22px;
+}
+
+.picNews img ,.coursePic img{
+	float:left;
+	margin:0 5px;
+	/*height:80px;*/
+}
+
+.picNews a ,.coursePic a {
+	color:#C00;
+	text-decoration: none;
+}
+
+.newsList {
+	margin-top:20px;
+}
+
+.newsList li {
+	list-style-type:none;
+	background:url(../images/list.jpg) no-repeat;
+	padding-left:10px;
+	margin:8px;
+	border-bottom:1px dotted #ccc;
+}
+
+.newsList a:link,.newsList a:visited {
+	text-decoration: none;
+	color:#000;
+}
+
+.newsList a:hover,.newsList a:active {
+	text-decoration: none;
+	color:#F00;
+}
+
+.newsList span {
+	color:#999;
+	float:right;
+}
+
+.coursePic {
+	height: 120px;
+	margin-top:10px;
+	line-height: 22px;
+}
+
+.courseType {
+	height:37px;
+	width:372px;
+	background:url(../images/product_type_bg.jpg) no-repeat;
+	margin:20px auto;
+}
+
+.courseType li {
+	list-style:none;
+	float:left;
+	line-height:37px;
+	margin:0 15px;
+	text-align:center;
+}
+.vedio {
+	height:185px;
+	border:1px solid #E8E8E8;
+}
+
+.vedioContent {
+	height:150px;
+}
+
+.sidebarAd {
+	height: 55px;
+	border:1px solid #E8E8E8;
+	margin-top:10px;
+}
+
+.copyright {
+	width:100%;
+	height: 200px;
+	background-color:#E8E8E8;
+	margin-top:10px;
+}
+
+.copyrightContent {
+	width:1000px;
+	margin:0 auto;
+	padding-top:20px;
+}
+.copyrightContent li {
+	list-style: none;
+	float:left;
+	width:200px;
+	background:url(../images/line.png) no-repeat right center;
+	text-align: center;
+	line-height: 30px;
+	font-family:"微软雅黑";
+}
+
+.copyrightContent a {
+	text-decoration: none;
+	color:#999;
+	font-size:18px;
+}
+
+.copyrightContent li ul li a {
+	font-size:14px;
+}
