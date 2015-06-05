@@ -33,7 +33,7 @@ window.onload=function(){
 		count.style.visibility="visible";
 		name_length=getLength(this.value);
 		count.innerHTML=name_length+"个字符";
-		if(name_length==0){
+		if(name_length===0){
 			count.style.visibility="hidden";
 		}
 	};
@@ -44,10 +44,11 @@ window.onload=function(){
 			userNameMsg.innerHTML='<i class="ati"></i>含有非法字符';
 		}
 		//不能为空
-		else if(this.value===null){
+		else if(this.value===""){
 			userNameMsg.innerHTML='<i class="ati"></i>不能为空';
 		}
 		//长度超过25个字符
+		
 		else if(name_length>25){
 			userNameMsg.innerHTML='<i class="ati"></i>长度超过25个字符';
 		}
@@ -88,9 +89,14 @@ window.onload=function(){
 		
 	};
 	password.onblur=function(){
+
 		var m=findStr(this.value,this.value[0]);
 		var nonnumeric=/[^\d]/g;//全局匹配的非数字,即字母和其他的一些符号
 		var nonLetter=/[^a-zA-Z]/g;//匹配所有a-zA-Z之外的东西
+		console.log(this.value);
+		console.log("m="+m);
+		console.log("nonnumeric"+nonnumeric);
+		console.log("nonLetter"+nonLetter);
 		//不能为空		
 		if(this.value===""){
 			
@@ -106,12 +112,12 @@ window.onload=function(){
 			passwordMsg.innerHTML='<i class="ati"></i>长度应为6-16个字符';
 		}
 		//不能全为数字
-		if(!nonnumeric.test(this.value)){
+		else if(!nonnumeric.test(this.value)){
 			passwordMsg.innerHTML='<i class="ati"></i>不能全为数字';
 		}
 
 		//不能全为字母
-		if(!nonLetter.test(this.value)){
+		else if(!nonLetter.test(this.value)){
 			passwordMsg.innerHTML='<i class="ati"></i>不能全为字母';
 		}
 		else{
@@ -127,7 +133,7 @@ window.onload=function(){
 		}
 		else{
 			passwordConfirmMsg.innerHTML='<i class="pass"></i>OK';		}
-	}
+	};
 	//联系方式
 	phone.onfocus=function(){
 		phoneMsg.style.display="block";
