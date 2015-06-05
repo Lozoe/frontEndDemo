@@ -1,0 +1,252 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: "微软雅黑";
+}
+
+body {
+    background-color: #F8F2F2;
+}
+
+.nav {
+    width: 1000px;
+    height: 50px;
+    margin: 0 auto;
+}
+
+.nav ul li {
+    list-style: none;
+    float: left;
+}
+
+.nav ul li a {
+    display: inline-block;
+    text-decoration: none;
+    height: 50px;
+    line-height: 50px;
+    width: 100px;
+    text-align: center;
+}
+
+.nav ul li a:link,
+.nav ul li a:visited {
+    color: black;
+}
+
+.nav ul li a:hover,
+.nav ul li a:active {
+    background-color: #CB1A1A;
+}
+
+.nav img {
+    float: left;
+}
+
+.ad {
+    height: 310px;
+    overflow: hidden;
+    width: 1000px;
+    margin: 2px auto;
+}
+
+.ad ul li {
+    list-style: none;
+}
+
+.ad ul li img {
+    width: 1000px;
+}
+
+.news {
+    width: 1000px;
+    margin: 20px auto;
+}
+
+.news .newsNav {
+    width: 1000px;
+    background-color: #3E3E3E;
+    height: 30px;
+    margin-bottom: 10px;
+}
+
+.news .newsNav ul li {
+    list-style: none;
+    /*float:left;*/
+    
+    display: inline-block;
+    height: 30px;
+    line-height: 30px;
+    width: 150px;
+    text-align: center;
+}
+
+.news .newsNav ul li a {
+    text-decoration: none;
+    color: #FFF;
+    display: inline-block;
+    width: 150px;
+}
+
+.news .newsNav ul li:first-child a {
+    background-color: #C81D1D;
+}
+
+.course {
+    width: 1000px;
+    margin: 20px auto;
+    clear: both;
+}
+
+.course div {
+    width: 330px;
+    float: left;
+    border: 1px solid #E8E8E8;
+    margin-bottom: 10px;
+}
+
+.course div a {
+    text-decoration: none;
+    color: black;
+    display: block;
+    margin: 2px auto;
+    font-size: 18px;
+    text-align: center;
+}
+
+.course div:nth-child(2) {
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+.main {
+    width: 1000px;
+    margin: 20px auto;
+    height: 380px;    
+    clear: both;
+}
+
+.main .mainNav,
+.main .mainNav ul {
+    height: 40px;
+}
+
+.main .mainNav ul li {
+    list-style: none;
+    float: left;
+    width: 330px;
+    background-color: #C81D1D;
+}
+
+.main .mainNav ul li:nth-child(2) {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.main .mainNav ul li a {
+    text-decoration: none;
+    display: inline-block;
+    padding: 10px;
+    color: #FFF;
+}
+
+.main .mainContent div {
+    width: 328px;
+    height:335px;
+    float:left;
+    border:1px solid #CCC;
+}
+
+.main .mainContent div:nth-child(2) {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.mainContent .newsList ul {
+    list-style: none;
+    width: 328px;
+    height: 335px;
+    border: 1px solid #CCC;
+}
+
+.mainContent .newsList ul li{
+    height: 90px;
+    margin: 20px 10px 0px 10px;
+    border-bottom: 1px solid #CCC;
+}
+
+.mainContent .newsList ul li .date {
+    float:left;
+    padding:10px 5px;
+    color:#FFF;
+    background-color:#C81D1D;
+    border-radius:8px;
+    margin-right:5px;
+    margin-bottom:6px;
+}
+
+.mainContent .newsList ul li h4 {
+    margin-bottom: 6px;
+}
+
+.date ~ h4 {
+    font-size:14px;
+}
+
+.date ~ p {
+    font-size:12px;
+}
+
+.main .mainContent div:nth-child(2) {
+    text-align: center;
+    border:1px solid #CCC;
+}
+
+
+.main .mainContent div:nth-child(2) ul{
+    margin-top:30px;
+    text-align: left;
+    padding-left:20px;
+}
+.main .mainContent div:nth-child(2) ul li{
+    list-style: none;
+    height:20px;
+    height: 25px;
+    line-height: 25px;
+}
+
+.main .mainContent div:nth-child(2) ul li a{
+    text-decoration: none;
+    color:black;
+}
+
+.main .mainContent div:nth-child(2) ul li a:hover,
+.main .mainContent div:nth-child(2) ul li a:active{
+    color:#C42323;
+}
+
+.main .mainContent div:last-child {
+    border:1px solid #CCC;
+}
+
+.main .mainContent .contactWay .contact {
+    height:100px;
+    width:220px;
+    margin:40px auto auto 15px;
+    border:none;
+    text-align: left;
+    font-family: "微软雅黑";    
+}
+
+.main .mainContent .contactWay .contact p {
+    line-height: 25px;
+    height: 25px;
+}
+.copyright {
+    width: 1000px;
+    height: 80px;
+    margin: 0 auto;
+    text-align: center;
+    line-height: 80px;
+    clear: both;
+    background-color: #E8E8E8;
+}
